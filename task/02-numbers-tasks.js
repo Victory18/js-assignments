@@ -22,7 +22,7 @@
  *   5, 5  => 25
  */
 function getRectangleArea(width, height) {
-    throw new Error('Not implemented');
+    return width * height;
 }
 
 
@@ -38,7 +38,7 @@ function getRectangleArea(width, height) {
  *   0    => 0
  */
 function getCicleCircumference(radius) {
-    throw new Error('Not implemented');
+    return 2 * Math.PI *radius;
 }
 
 /**
@@ -54,7 +54,10 @@ function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-    throw new Error('Not implemented');
+    //if (Number.isSafeInteger(value1) == true && Number.isSafeInteger(value2) == true) return (value1 + value2) / 2;
+    //else return Number.MAX_VALUE + (value1 + value2) / 2;
+
+    return value1 / 2 + value2 / 2;
 }
 
 /**
@@ -73,7 +76,7 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-    throw new Error('Not implemented');
+    return Math.sqrt((x2-x1) * (x2-x1) + (y2-y1) * (y2-y1));
 }
 
 /**
@@ -89,7 +92,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-    throw new Error('Not implemented');
+    return -b / a;
 }
 
 
@@ -111,7 +114,8 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-    throw new Error('Not implemented');
+    return Math.acos(x1 * x2 + y1 * y2 - (Math.sqrt(x1 * y1) + Math.sqrt(x2 * y2)));
+    
 }
 
 /**
@@ -127,7 +131,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-    throw new Error('Not implemented');
+    return value.toString().slice(-1);
 }
 
 
@@ -143,7 +147,7 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-    throw new Error('Not implemented');
+    return +value;
 }
 
 /**
@@ -160,7 +164,7 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelipidedDiagonal(a,b,c) {
-    throw new Error('Not implemented');
+    return Math.sqrt(a * a + b * b + c * c);
 }
 
 /**
@@ -181,7 +185,7 @@ function getParallelipidedDiagonal(a,b,c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-    throw new Error('Not implemented');
+    return Math.round(num / Math.pow(10, pow)) * Math.pow(10, pow);
 }
 
 /**
@@ -202,7 +206,10 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-    throw new Error('Not implemented');
+    for(var i = 2; i < n; i++) {
+        if(n % i === 0) return false;
+    }
+return n > 1;
 }
 
 /**
@@ -221,7 +228,7 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-    throw new Error('Not implemented');
+    return (!isNaN(+value) && typeof(+value) == 'number') ? +value : def;
 }
 
 module.exports = {

@@ -33,7 +33,17 @@
  *
  */
 function* get99BottlesOfBeer() {
-    throw new Error('Not implemented');
+    let bottles;
+    for (let counter = 99; 1 < counter; counter -= 1) {
+        bottles = 'bottles';  
+        console.log(counter + " " + bottles + " of beer on the wall, " + counter + " " + bottles +  "of beer.");
+        console.log("Take one down and pass it around," + counter - 1 + bottles + "of beer on the wall.");
+    }
+
+    console.log('1 bottle of beer on the wall, 1 bottle of beer.')
+    console.log('Take one down and pass it around, no more bottles of beer on the wall.');
+    console.log('No more bottles of beer on the wall, no more bottles of beer.');
+    console.log('Go to the store and buy some more, 99 bottles of beer on the wall.');
 }
 
 
